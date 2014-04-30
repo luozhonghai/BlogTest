@@ -1,0 +1,25 @@
+
+<section id="posts">
+ <article class="post">
+	<header>
+		<h2><%= @article.title  %></h2>
+	</header>
+		<%= sanitize(@article.content) %>
+ </article>	
+</section>	
+
+<section id="comments">
+    <h3>COMMENTS</h3>
+     <% @article.comments.each do |comment| %>
+      <section class="comment">
+            <p><%= comment.description  %></p>
+            <footer>
+            	<p><%= comment.user  %> April 26 2014 08:12 AM</p>
+            </footer>
+      </section>
+     <% end %>
+</section>
+
+<%= render("comments/form") %>
+
+

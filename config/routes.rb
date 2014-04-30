@@ -1,4 +1,9 @@
 Blog::Application.routes.draw do
+  resources :comments
+
+  get "blog/show"
+  get "blog/article_view"
+  get "blog/index"
   resources :articles
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -6,7 +11,7 @@ Blog::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
+  root 'blog#index', as: 'blog'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
