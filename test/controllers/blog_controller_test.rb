@@ -7,7 +7,7 @@ class BlogControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show
+    get :show, article_id: articles(:one)
     assert_response :success
   end
 

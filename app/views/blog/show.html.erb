@@ -9,17 +9,15 @@
 </section>	
 
 <section id="comments">
-    <h3>COMMENTS</h3>
-     <% @article.comments.each do |comment| %>
-      <section class="comment">
-            <p><%= comment.description  %></p>
-            <footer>
-            	<p><%= comment.user  %> April 26 2014 08:12 AM</p>
-            </footer>
-      </section>
-     <% end %>
+   <%=  render(partial: "comments/comments", locals: {current_view_obj:@article } ) %>
 </section>
 
-<%= render("comments/form") %>
 
+
+<section id="postcomments">
+	<h3>POST A COMMENT</h3>
+	<div id="formcontent">
+		<%= render(partial: "comments/form", locals: {comment: @comment}) %>
+	</div>
+</section>
 

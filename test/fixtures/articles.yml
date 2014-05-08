@@ -3,6 +3,7 @@
 one:
   title: MyString
   content: MyText
+  id: 1
 
 two:
   title: MyString

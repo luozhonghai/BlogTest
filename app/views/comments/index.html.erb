@@ -6,6 +6,7 @@
       <th>User</th>
       <th>Mail</th>
       <th>Description</th>
+      <th>PostTime</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,6 +19,7 @@
         <td><%= comment.user %></td>
         <td><%= comment.mail %></td>
         <td><%= comment.description %></td>
+        <td><%= comment.created_at %></td>
         <td><%= link_to 'Show', comment %></td>
         <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
         <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>

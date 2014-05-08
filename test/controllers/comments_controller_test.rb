@@ -3,6 +3,7 @@ require 'test_helper'
 class CommentsControllerTest < ActionController::TestCase
   setup do
     @comment = comments(:one)
+    session[:current_article_id] = articles(:one);
   end
 
   test "should get index" do
@@ -21,7 +22,7 @@ class CommentsControllerTest < ActionController::TestCase
       post :create, comment: { description: @comment.description, mail: @comment.mail, user: @comment.user }
     end
 
-    assert_redirected_to comment_path(assigns(:comment))
+    assert_redirected_to blog_show_path(article_id: articles(:one))
   end
 
   test "should show comment" do
